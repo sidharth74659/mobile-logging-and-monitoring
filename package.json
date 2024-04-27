@@ -9,7 +9,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "build:prod": "ionic build --prod",
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org propel-apps-ug --project ionic ./www && sentry-cli sourcemaps upload --org propel-apps-ug --project ionic ./www"
   },
   "private": true,
   "dependencies": {
@@ -26,7 +28,12 @@
     "@capacitor/haptics": "6.0.0",
     "@capacitor/keyboard": "6.0.0",
     "@capacitor/status-bar": "6.0.0",
-    "@ionic/angular": "^8.0.0",
+    "@ionic/angular": "^8.0.1",
+    "@sentry/angular": "^7.112.2",
+    "@sentry/angular-ivy": "^7.93.0",
+    "@sentry/capacitor": "^0.17.0",
+    "@sentry/cli": "^2.31.0",
+    "@sentry/tracing": "^7.112.2",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

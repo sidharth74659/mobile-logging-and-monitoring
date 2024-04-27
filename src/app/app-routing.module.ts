@@ -8,8 +8,20 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'browse-catalogue',
     pathMatch: 'full'
+  },
+  {
+    path: 'browse-catalogue',
+    loadChildren: () => import('./browse-catalogue/browse-catalogue.module').then( m => m.BrowseCataloguePageModule)
+  },
+  {
+    path: 'shopping-cart',
+    loadChildren: () => import('./shopping-cart/shopping-cart.module').then( m => m.ShoppingCartPageModule)
+  },
+  {
+    path: 'checkout',
+    loadChildren: () => import('./checkout/checkout.module').then( m => m.CheckoutPageModule)
   },
 ];
 
