@@ -5,7 +5,8 @@ interface IBusinessConfig {
 }
 
 const BUSINESS_CONFIG: IBusinessConfig = {
-    loggingService: LoggingServiceEnum.Sentry
+    // loggingService: LoggingServiceEnum.Sentry
+    loggingService: LoggingServiceEnum.Newrelic
 }
 
 export default BUSINESS_CONFIG;
