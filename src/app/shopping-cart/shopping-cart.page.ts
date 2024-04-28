@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MonitoringService } from '../monitoring/monitoring.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingCartPage implements OnInit {
 
-  constructor() { }
+  metrics: string = '';
+
+  constructor(
+    private monitoringService: MonitoringService
+  ) { }
 
   ngOnInit() {
+    this.monitoringService.getMetrics().subscribe(metrics => {
+      this.metrics = metrics;
+    });
   }
 
 }

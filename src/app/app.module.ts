@@ -12,6 +12,7 @@ import * as Sentry from "@sentry/capacitor";
 // Use @sentry/angular-ivy for Angular 12+ or `@sentry/angular` from Angular 10 and 11
 import * as SentryAngular from "@sentry/angular-ivy";
 import SENTRY_CONFIG from 'sentry.config';
+import { HttpClientModule } from '@angular/common/http';
 
 
 Sentry.init(
@@ -22,7 +23,7 @@ Sentry.init(
 );
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
     {
       provide: ErrorHandler,

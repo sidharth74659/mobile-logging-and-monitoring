@@ -10,7 +10,8 @@ import { NewrelicLoggingService } from './newrelic/newrelic-logging.service';
 })
 export class LoggingService implements ILoggingService {
 
-  loggingService: LoggingServiceEnum = BUSINESS_CONFIG.loggingService
+  loggingService: LoggingServiceEnum = BUSINESS_CONFIG.loggingService;
+
   constructor(
     private sentryLoggingService: SentryLoggingService,
     private newrelicLoggingService: NewrelicLoggingService
